@@ -1,0 +1,107 @@
+/**
+ * Global base styles — design-led palette.
+ * Semantic tokens from theme.css. Restraint: color as accent, not decoration.
+ */
+
+:root {
+  /* Semantic aliases → theme (use these or md-sys-* directly) */
+  --color-accent: var(--md-sys-color-primary);
+  --color-heading: var(--md-sys-color-on-surface);
+  --color-body: var(--md-sys-color-on-surface);
+  --color-muted: var(--md-sys-color-on-surface-variant);
+
+  /* Borders from theme */
+  --wire-border: 1px solid var(--md-sys-color-outline);
+  --wire-border-light: 1px solid var(--md-sys-color-outline-variant);
+
+  /* Surface tint for highlights (primary, low opacity) — follows primary token */
+  --surface-tint: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+
+  /* Layout */
+  --section-max: 1200px;
+  --section-padding-y: clamp(80px, 12vw, 140px);
+  --section-padding-x: clamp(24px, 5vw, 48px);
+
+  /* Font weight — light, minimal */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 800;
+
+  /* Line height */
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.75;
+
+  /* Typography scale */
+  --text-hero: clamp(2.5rem, 5vw, 4rem);
+  --text-section-heading: clamp(1.5rem, 3vw, 2.25rem);
+  --text-lead: 1.25rem;
+  --text-lead-lg: 1.375rem;
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-caption: 0.875rem;
+  --text-num: 0.75rem;
+  --text-h3: 1.5rem;
+  --text-h4: 1.25rem;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.01em;
+  --tracking-wider: 0.04em;
+  --tracking-widest: 0.08em;
+  --tracking-num: 0.12em;
+  --tracking-label: 0.06em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: var(--font-light);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
