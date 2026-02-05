@@ -1,13 +1,17 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import HomeJsonLd from "./components/HomeJsonLd"
+import { useCart } from "./context/CartContext"
 import styles from "./page.module.css"
+import cartStyles from "./cart/cart.module.css"
 
 export default function Home() {
   const [formState, setFormState] = useState("idle")
   const [formError, setFormError] = useState("")
   const [selectedService, setSelectedService] = useState(null)
+  const { cart, addItem } = useCart()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -48,8 +52,7 @@ export default function Home() {
   }
 
   function addService(name) {
-    setSelectedService(name)
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+    addItem(name)
   }
 
   return (
@@ -59,14 +62,24 @@ export default function Home() {
           <a href="#" className={styles.logo}>
             Safe Mode
           </a>
-          <ul className={styles.navLinks}>
-            <li><a href="/#offerings">Offerings</a></li>
-            <li><a href="/#why-us">Why us</a></li>
-            <li><a href="/work">Work</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/#faq">FAQ</a></li>
-            <li><a href="/#contact">Contact</a></li>
-          </ul>
+          <div className={styles.navRight}>
+            <ul className={styles.navLinks}>
+              <li><a href="/#offerings">Offerings</a></li>
+              <li><a href="/#why-us">Why us</a></li>
+              <li><a href="/work">Work</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+              <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <Link href="/cart" className={styles.cartIcon} aria-label="Cart">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
+              {cart.length > 0 && <span className={cartStyles.badge}>{cart.length}</span>}
+            </Link>
+          </div>
         </nav>
       </header>
 
@@ -277,7 +290,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <a href="#contact" className={styles.addServiceBtn} onClick={(e) => { e.preventDefault(); addService("Product & UX Audit"); }}>Add service</a>
+            <button type="button" className={styles.addServiceBtn} onClick={() => addService("Product & UX Audit")}>Add service</button>
           </article>
 
           <article className={`${styles.solutionBlock} ${styles.solutionBlockFlagship}`}>
@@ -306,7 +319,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <a href="#contact" className={styles.addServiceBtn} onClick={(e) => { e.preventDefault(); addService("Discovery Program"); }}>Add service</a>
+            <button type="button" className={styles.addServiceBtn} onClick={() => addService("Discovery Program")}>Add service</button>
           </article>
 
           <article className={styles.solutionBlock}>
@@ -331,7 +344,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <a href="#contact" className={styles.addServiceBtn} onClick={(e) => { e.preventDefault(); addService("Add a Sprint"); }}>Add service</a>
+            <button type="button" className={styles.addServiceBtn} onClick={() => addService("Add a Sprint")}>Add service</button>
           </article>
         </section>
 
@@ -485,7 +498,7 @@ export default function Home() {
               <textarea name="message" rows={4} required className={styles.textarea} disabled={formState === "sending"} />
             </label>
             {formState === "error" && <p className={styles.formError} role="alert">{formError}</p>}
-            {formState === "sent" && <p className={styles.formSuccess}>Message sent. We’ll get back to you soon.</p>}
+            {formState === "sent" && <p className={styles.formSuccess}>Transaction successful.</p>}
             <button type="submit" className={styles.submit} disabled={formState === "sending"}>
               {formState === "sending" ? "Sending…" : "Let’s chat"}
             </button>

@@ -1,0 +1,132 @@
+.main {
+  max-width: var(--section-max);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.wrapper {
+  max-width: 420px;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: var(--section-gap-title-body);
+  font-size: var(--text-caption);
+  font-weight: var(--font-medium);
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0 0 var(--section-gap-title-body);
+  font-size: var(--section-heading-font-size);
+  font-weight: var(--section-heading-font-weight);
+  color: var(--md-sys-color-on-surface);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+  padding: 16px;
+  background: var(--md-sys-color-surface-container-low);
+  border: var(--wire-border-light);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-size: var(--text-body);
+  font-weight: var(--font-semibold);
+  color: var(--md-sys-color-on-surface);
+}
+
+.chooseLabel {
+  margin: 0 0 12px;
+  font-size: var(--text-caption);
+  font-weight: var(--font-medium);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stripeBtn {
+  min-height: var(--btn-primary-min-height);
+  padding: var(--btn-primary-padding-y) var(--btn-primary-padding-x);
+  font-size: var(--btn-primary-font-size);
+  font-weight: var(--btn-primary-font-weight);
+  font-family: inherit;
+  color: #fff;
+  background: #635bff;
+  border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.stripeBtn:hover:not(:disabled) {
+  background: #524ade;
+}
+
+.stripeBtn:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.or {
+  text-align: center;
+  font-size: var(--text-caption);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.paypalWrap {
+  min-height: 45px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form .label {
+  margin-bottom: 16px;
+}
+
+.form .submit {
+  margin-top: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.empty {
+  margin: 0 0 24px;
+  font-size: var(--text-body);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  color: #fff;
+  background: var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-full);
+}

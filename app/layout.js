@@ -2,6 +2,7 @@ import "./theme.css"
 import "./globals.css"
 import { Plus_Jakarta_Sans } from "next/font/google"
 import JsonLd from "./components/JsonLd"
+import CartLayoutClient from "./components/CartLayoutClient"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -62,7 +63,7 @@ export default function RootLayout({ children }) {
       <body className={plusJakarta.className} style={{ fontFamily: "var(--font-sans)" }}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <JsonLd />
-        {children}
+        <CartLayoutClient>{children}</CartLayoutClient>
       </body>
     </html>
   )

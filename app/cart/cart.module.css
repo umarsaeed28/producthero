@@ -1,0 +1,125 @@
+.main {
+  max-width: var(--section-max);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.wrapper {
+  max-width: 480px;
+}
+
+.title {
+  margin: 0 0 var(--section-gap-title-body);
+  font-size: var(--section-heading-font-size);
+  font-weight: var(--section-heading-font-weight);
+  color: var(--md-sys-color-on-surface);
+}
+
+.empty {
+  font-size: var(--text-body);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 var(--space-24);
+  padding: 0;
+  border: var(--wire-border-light);
+  border-radius: var(--md-sys-shape-corner-small);
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background: var(--md-sys-color-surface);
+  border-bottom: var(--wire-border-light);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.itemName {
+  font-size: var(--text-body);
+  font-weight: var(--font-medium);
+  color: var(--md-sys-color-on-surface);
+}
+
+.itemPrice {
+  display: block;
+  font-size: var(--text-caption);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.removeBtn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  border: var(--wire-border);
+  border-radius: var(--md-sys-shape-corner-small);
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.removeBtn:hover {
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+  padding: 16px 0;
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-semibold);
+  color: var(--md-sys-color-on-surface);
+  border-top: var(--wire-border);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addMoreLink {
+  font-size: var(--text-body);
+  font-weight: var(--font-semibold);
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+}
+
+.addMoreLink:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  color: #fff;
+  background: var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-full);
+}
