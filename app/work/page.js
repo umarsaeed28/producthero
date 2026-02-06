@@ -18,14 +18,13 @@ export default function WorkPage() {
     <>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
+<Link href="/" className={styles.logo} aria-label="Safe Mode home">
             Safe Mode
           </Link>
           <ul className={styles.navLinks}>
-            <li><a href="/#offerings">Offerings</a></li>
+            <li><a href="/#solutions">Solutions</a></li>
             <li><a href="/#why-us">Why us</a></li>
             <li><a href="/work">Work</a></li>
-            <li><a href="/blog">Blog</a></li>
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#contact">Contact</a></li>
           </ul>
