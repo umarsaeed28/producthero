@@ -20,6 +20,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## GitHub Pages
+
+Each push to `main` builds the site and pushes it to the `gh-pages` branch. To show the site (not the README):
+
+1. **Settings** → **Pages**
+2. **Build and deployment** → **Source**: choose **Deploy from a branch**
+3. **Branch**: `gh-pages` · **Folder**: `/ (root)` · **Save**
+4. After the next push, the site is at **https://&lt;username&gt;.github.io/producthero/**
+
 ## Create project from scratch (Mac)
 
 If you need to create the project in a new folder:
